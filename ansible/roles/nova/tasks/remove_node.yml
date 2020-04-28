@@ -1,0 +1,24 @@
+#TODO:仅移除该节点nova服务，不影响其他docker容器
+---
+- name: Check qemu process
+  shell: ps -aux | grep qemu
+  ignore_errors: true
+  register: qemu_exists
+
+- name: Instance(s) still exists on this node
+  fail_when: qemu_exists != 0
+  
+- name: Disable Nova service on this node
+
+- name: Close Nova service on this node
+
+- name: Delete Nova service on this node
+
+- name: Validate docker execute
+
+- name: Clean up Nova containers
+
+- name: Clean up Host
+
+- name: Flush handlers
+  meta: flush_handlers
